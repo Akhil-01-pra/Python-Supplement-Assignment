@@ -2,9 +2,5 @@
 # Find and fix the error
 
 def fahrenheit_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5/9
-    return celsius
-
-temp_f = 98.6
-temp_c = fahrenheit_to_celsius(temp_f)
+    return (fahrenheit - 32) * 5.0/9.0  
 print(f"{temp_f}°F = {temp_c}°C")
