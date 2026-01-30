@@ -8,4 +8,5 @@ for char in text:
         char_count[char] += 1
     else:
         char_count[char] = 1
+        
 print(char_count)
