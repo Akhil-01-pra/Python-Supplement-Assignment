@@ -2,13 +2,18 @@
 # Find and fix the error
 
 def calculator(a, b, operation):
-    if operation == "add":
+    if operation == 'add':
         return a + b
-    elif operation == "subtract":
+    elif operation == 'subtract':
         return a - b
-    elif operation == "multiply":
+    elif operation == 'multiply':
         return a * b
-    elif operation == "divide":
-        return a / b
+    elif operation == 'divide':
+        if b != 0:
+            return a / b
+        else:
+            return "Error: Division by zero"
+    else:
+        return "Error: Unknown operation"           
 
 print(f"10 / 0 = {calculator(10, 0, 'divide')}")
