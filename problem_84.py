@@ -2,10 +2,5 @@
 # Find and fix the error
 
 def contains_substring(text, substr):
-    for i in range(len(text) - len(substr)):
-        if text[i:i+len(substr)] == substr:
-            return True
-    return False
-
-sentence = "Python programming is fun"
+    return substr in text   
 print(f"Contains 'fun': {contains_substring(sentence, 'fun')}")
