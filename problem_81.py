@@ -3,15 +3,16 @@
 
 def balanced_brackets(s):
     stack = []
-    pairs = {'(': ')', '[': ']', '{': '}'}
+    bracket_map = {')': '(', '}': '{', ']': '['}
+    opening_brackets = set(bracket_map.values())
     
     for char in s:
-        if char in pairs:
+        if char in opening_brackets:
             stack.append(char)
-        elif char in pairs.values():
-            if not stack or pairs[stack.pop()] != char:
+        elif char in bracket_map:
+            if not stack or stack[-1] != bracket_map[char]:
                 return False
-    return len(stack) == 0
-
-expr = "{[()]}"
+            stack.pop()
+    
+    return len(stack) == 0  
 print(f"Balanced: {balanced_brackets(expr)}")
